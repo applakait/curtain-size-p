@@ -3,12 +3,30 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>窗簾尺寸換算</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>窗簾尺寸換算器</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
+  <h1>窗簾尺寸換算器</h1>
+  <form id="form">
+    <input type="text" id="customer" placeholder="客戶名稱" required />
+    <input type="number" id="width" placeholder="寬 (cm)" required />
+    <input type="number" id="height" placeholder="高 (cm)" required />
+    <button type="submit">加入紀錄</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>客戶名稱</th>
+        <th>寬 (cm/尺)</th>
+        <th>高 (cm/尺)</th>
+        <th>坪數</th>
+      </tr>
+    </thead>
+    <tbody id="record-body"></tbody>
+  </table>
+  <button onclick="downloadExcel()">匯出 Excel</button>
+  <script src="script.js"></script>
 </body>
 </html>
