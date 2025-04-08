@@ -12,7 +12,6 @@ export default function CurtainSizeApp() {
   const [records, setRecords] = useState([]);
 
   const convertToChi = (cm) => (cm / 30.3).toFixed(1);
-  const convertToPing = (w, l) => ((w * l) / 10000 / 3.3058).toFixed(2);
 
   const handleAdd = () => {
     if (!customer || !width || !length) return;
@@ -24,7 +23,6 @@ export default function CurtainSizeApp() {
         length,
         widthChi: convertToChi(width),
         lengthChi: convertToChi(length),
-        ping: convertToPing(width, length),
       },
     ]);
     setCustomer("");
@@ -76,7 +74,6 @@ export default function CurtainSizeApp() {
               <p>
                 尺寸：{r.width} cm × {r.length} cm （{r.widthChi} 尺 × {r.lengthChi} 尺）
               </p>
-              <p>約 {r.ping} 坪</p>
             </div>
           </motion.div>
         ))}
